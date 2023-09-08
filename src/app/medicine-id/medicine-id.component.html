@@ -1,0 +1,42 @@
+<div>
+    <h2>Category Details</h2>
+  
+    <label for="categoryid">Category ID:</label>
+    <input type="number"  [(ngModel)]="categoryid" />
+    <button (click)="categoryById()">Get Medicine Details</button>
+  
+    <div *ngIf="errors" class="error"> <!--for errors-->
+      {{ errors }}
+    </div>
+  
+
+    <div *ngIf="button_clicked && medicinedetails"> <!--for medicine details-->
+      <h3>Medicine Details</h3>
+      <ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Medicine Id</th>
+                    <th>Category Id</th>
+                    <th>Medicine Name</th>
+                    <th>prize</th>
+                    <th>Expiry Date</th>
+                    <th>Stock lvl</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of medicinedetails">
+                    <td>{{m.id}}</td>
+                        <td>{{m.categoryid}}</td>
+                        <td>{{m.mediname}}</td>
+                        <td>{{m.prize}}</td>
+                        <td>{{m.expirydate | date:'dd-MMM-yyyy'}}</td>
+                        <td>{{m.stocklvl}}</td>
+                </tr>
+            </tbody>
+        </table>       
+      </ul>
+    </div>
+  </div>
+
