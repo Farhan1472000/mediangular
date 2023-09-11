@@ -28,6 +28,15 @@ export class CategorynameComponent {
 
 }
 export class HttpCommunication extends AbstractHttpCommunication{
+    GetMedicinesExpiringNextMonth(): Observable<medicinedetails[]> {
+      throw new Error('Method not implemented.');
+    }
+    GetMedicinesReachingCriticalStock(criticalStockLevel: number): Observable<medicinedetails[]> {
+      throw new Error('Method not implemented.');
+    }
+    sortMedicines(sortBy: string): Observable<medicinedetails[]> {
+      throw new Error('Method not implemented.');
+    }
     GetMedicines(): Observable<medicinedetails[]> {
       throw new Error('Method not implemented.');
     }

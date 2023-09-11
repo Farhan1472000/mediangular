@@ -1,0 +1,10 @@
+<p>expiring-next-mnth works!</p>
+<div class="container mt-5">
+    <h2>Medicines Expiring Next Month</h2>
+    <div *ngIf="errors" class="text-danger">{{ errors }}</div>
+    <ul>
+    <li *ngFor="let med of expiringMeds">
+            {{ med.mediname }} (Expiry Date: {{ med.expirydate | date: 'mediumDate' }})
+    </li>
+    </ul>
+    </div>

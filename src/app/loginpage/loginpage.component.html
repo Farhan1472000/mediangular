@@ -1,24 +1,25 @@
-<p>loginpage works!</p>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
 </head>
-<body>
+<body> -->
 <div class="login-container">
-<img src="assets/project logo.jpg" height="150" width="150" alt="Medicine" class="pic">
-<h2>Login Details</h2>
+<img src="/assets/project logo.jpg" height="100" width="200" alt="Stethoscope Icon" class="pic">
+<h2>Login</h2>
 <form>
 <div class="input-container">
 <label for="username">Username</label>
-<input type="text" id="username" name="username" required>
+<input type="text"#uid name="username" required>
 </div>
 <div class="input-container">
 <label for="password">Password</label>
-<input type="password" id="password" name="password" required>
+<input type="password" #pwd name="password" required>
 </div>
-<button type="submit">Submit</button>
+<button class="btn btn-primary btn-block"
+                (click)="getToken(uid.value,pwd.value)">Login</button>
 </form>
 </div>
+<span class="text-danger">{{errormsg}}</span>

@@ -1,0 +1,52 @@
+<p>navbar works!</p>
+<!-- Navbar component -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="/">Medicine Details</a>
+    
+    <!-- Add a button for mobile navigation -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Navbar items -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+    <!-- Show Login when not logged in -->
+    <li class="nav-item" *ngIf="!isLoggedIn">
+    <a class="nav-link" routerLink="loginpage">Login</a>
+    </li>
+    
+    <!-- Show other links when logged in -->
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="medicinedetails">Medicine Stock</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="medicineid">category Id</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="categoryname">category Name</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="expiringnextmnth">Expiring Next Month</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="criticalstock">critical stock level</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="Add">Add</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="Update">Update</a>
+    </li>
+    <!-- <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" routerLink="delete">Delete</a>
+    </li> -->
+    <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" (click)="logout()">Logout</a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </nav>

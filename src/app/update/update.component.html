@@ -1,0 +1,46 @@
+<p>update works!</p>
+<a routerLink="">Go to Medicine Page</a>
+<br/>
+<div>
+<label>Id</label>
+<br/>
+<input type="number" [(ngModel)]="medicinedetails.id"/>
+<br/>
+<label>Medicine Name</label>
+<br/>
+<input type="text" [(ngModel)]="medicinedetails.mediname"/>
+<br/>
+<label>Category ID</label>
+<br/>
+<input type="number" [(ngModel)] ="medicinedetails.categoryid"/>
+<br/>
+<label>Expiry Date</label>
+<br/>
+<input type="date" [(ngModel)] ="medicinedetails.expirydate"/>
+
+ 
+
+            <br/>
+<label>Stock Level</label>
+<br/>
+<input type="number" [(ngModel)]="medicinedetails.stocklvl"/>
+<br/>
+<label>Prize</label>
+<br/>
+<input type="number" [(ngModel)]="medicinedetails.prize"/>
+<br/>
+
+<!-- <button (click)="add()">Add record</button> -->
+<button (click)="update()">Update record</button>
+
+ 
+
+ 
+
+           
+</div>
+<h2>{{medicinedetails | json}}</h2>
+
+ 
+
+<span style="color:red">{{statusDetails}}</span>

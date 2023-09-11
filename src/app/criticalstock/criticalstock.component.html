@@ -1,0 +1,45 @@
+<p>criticalstock works!</p>
+<div>
+    <label for="criticalStockLevel">Critical Stock Level:</label>
+    <input type="number" id="criticalStockLevel" [(ngModel)]="criticalStockLevel">
+    <button (click)="loadMedicinesReachingCriticalStock()">Get Medicines</button>
+  </div>
+<div>
+    <h2>Medicines Reaching Critical Stock Level</h2>
+  
+    <!-- Display critical stock level -->
+    <!-- <p>Critical Stock Level: {{ criticalStockLevel }}</p> -->
+  
+    <!-- Display errors if any -->
+    <div *ngIf="errors" class="text-danger">
+      {{ errors }}
+    </div>
+  
+    <!-- Display Medicine Inventories -->
+    <div *ngIf="medicines.length > 0">
+      <ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Medicine ID</th>
+              <th>Medicine Name</th>
+              <th>Category ID</th>
+              <th>Expiry Date</th>
+              <th>Stock Level</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let m of medicines">
+              <td>{{ m.id }}</td>
+              <td>{{ m.mediname }}</td>
+              <td>{{ m.categoryid }}</td>
+              <td>{{ m.expirydate | date:'dd-MMM-yyyy'  }}</td>
+              <td>{{ m.stocklvl}}</td>
+              <td>{{ m.prize }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+  </div>
